@@ -12,6 +12,9 @@ namespace rbac_web.Extensions
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             return app;
         }
     }

@@ -1,16 +1,9 @@
 using Microsoft.Extensions.Options;
 using rbac_core.Interface.Config;
+using rbac_core.Settings;
 
 namespace rbac_core.Config
 {
-    public sealed class DbSettings
-    {
-        public required string Host { get; set; }
-        public required string Database { get; set; }
-        public required string User { get; set; }
-        public required string Password { get; set; }
-    }
-
     public sealed class DbDevConfig(IOptions<DbSettings> options) : IDbConfig
     {
         private readonly DbSettings _settings = options.Value;
