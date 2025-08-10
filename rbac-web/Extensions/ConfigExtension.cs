@@ -1,4 +1,4 @@
-using rbac_core.Config;
+using rbac_core.Settings;
 
 namespace rbac_web.Extensions
 {
@@ -10,8 +10,10 @@ namespace rbac_web.Extensions
         )
         {
             var dbConfigs = configs.GetSection("DbSettings");
+            var jwtSettingsSection = configs.GetSection("JwtSettings");
 
             services.Configure<DbSettings>(dbConfigs);
+            services.Configure<JwtSettings>(jwtSettingsSection);
 
             return services;
         }
