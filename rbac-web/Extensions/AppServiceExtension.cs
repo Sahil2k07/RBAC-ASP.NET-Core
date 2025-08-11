@@ -7,7 +7,7 @@ namespace rbac_web.Extensions
     {
         internal static IServiceCollection AddAppServices(this IServiceCollection services)
         {
-            services.AddSingleton<IAuthService, AuthService>();
+            services.AddScoped<IAuthService, AuthService>();
 
             services.AddScoped<IUserService, UserService>();
 
