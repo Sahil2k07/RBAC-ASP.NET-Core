@@ -1,4 +1,5 @@
-using rbac_core.Context;
+using rbac_core.Interface.Service;
+using rbac_core.Service;
 
 namespace rbac_web.Extensions
 {
@@ -6,7 +7,9 @@ namespace rbac_web.Extensions
     {
         internal static IServiceCollection AddAppServices(this IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>();
+            services.AddSingleton<IAuthService, AuthService>();
+
+            services.AddScoped<IUserService, UserService>();
 
             return services;
         }
