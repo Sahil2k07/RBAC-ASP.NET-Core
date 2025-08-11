@@ -129,9 +129,9 @@ This project implements a Role-Based Access Control (RBAC) authentication system
     cd rbac-web
     ```
 
-7.  Start the project localy
+7.  Start the project in `Development` mode
 
-    ```json
+    ```bash
     dotnet run
     ```
 
