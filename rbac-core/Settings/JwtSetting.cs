@@ -2,6 +2,7 @@ namespace rbac_core.Settings
 {
     public sealed class JwtSettings
     {
+        public required string TokenName { get; set; }
         public required string SecretKey { get; set; }
         public required string Issuer { get; set; }
         public required string Audience { get; set; }

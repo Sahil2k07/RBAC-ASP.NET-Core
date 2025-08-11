@@ -29,7 +29,7 @@ namespace rbac_web.Extensions
                     {
                         OnMessageReceived = context =>
                         {
-                            var token = context.Request.Cookies["access_token"];
+                            var token = context.Request.Cookies[jwtSettings.TokenName];
                             if (!string.IsNullOrEmpty(token))
                             {
                                 context.Token = token;

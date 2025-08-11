@@ -108,4 +108,19 @@ namespace rbac_core.Views
 
         public string[] Roles { get; set; } = [];
     }
+
+    public sealed class SigninRequest
+    {
+        [Required]
+        [EmailAddress]
+        public required string Email { get; set; }
+
+        [Required]
+        [StringLength(
+            100,
+            MinimumLength = 6,
+            ErrorMessage = "Password must be between 6 and 100 characters."
+        )]
+        public required string Password { get; set; }
+    }
 }

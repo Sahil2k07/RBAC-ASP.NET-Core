@@ -13,5 +13,7 @@ namespace rbac_core.Interface.Service
         PaginatedResponse<UserResponse> ListUsers(PaginatedRequest<UserListRequest> req);
 
         Task UpdatePassword(ChangePasswordRequest req);
+
+        Task<string> Signin(SigninRequest req);
     }
 }

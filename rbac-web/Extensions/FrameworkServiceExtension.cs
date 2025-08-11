@@ -10,6 +10,8 @@ namespace rbac_web.Extensions
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
 
+            services.AddHttpContextAccessor();
+
             services
                 .AddControllers()
                 .AddJsonOptions(o =>

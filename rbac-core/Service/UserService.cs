@@ -56,6 +56,22 @@ namespace rbac_core.Service
             return new PaginatedResponse<UserResponse>(count, users);
         }
 
+        public async Task<string> Signin(SigninRequest req)
+        {
+            User? user =
+                await _userRepository.GetUser(req.Email)
+                ?? throw new NotFoundException("Email not recognized");
+
+            if (!_authService.VerifyPassword(req.Password, user.Password))
+            {
+                throw new UnAuthorizedException("Wrong email or Passoword");
+            }
+
+            string token = _authService.GenerateToken(user);
+
+            return token;
+        }
+
         public async Task UpdatePassword(ChangePasswordRequest req)
         {
             User? user =
