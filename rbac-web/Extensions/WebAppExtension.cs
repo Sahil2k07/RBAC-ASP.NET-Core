@@ -14,6 +14,8 @@ namespace rbac_web.Extensions
 
             app.UseHttpsRedirection();
 
+            app.UseRateLimiter();
+
             app.MapControllers();
 
             app.UseMiddleware<HttpMiddleware>();
