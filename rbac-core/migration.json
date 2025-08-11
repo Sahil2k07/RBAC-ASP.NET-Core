@@ -1,0 +1,8 @@
+{
+  "DbSettings": {
+    "Host": "localhost",
+    "Database": "RBAC",
+    "User": "SA",
+    "Password": "$hahil00"
+  }
+}

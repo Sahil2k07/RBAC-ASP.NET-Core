@@ -1,3 +1,5 @@
+using rbac_core.Middleware;
+
 namespace rbac_web.Extensions
 {
     internal static class WebAppExtension
@@ -11,6 +13,10 @@ namespace rbac_web.Extensions
             }
 
             app.UseHttpsRedirection();
+
+            app.MapControllers();
+
+            app.UseMiddleware<HttpMiddleware>();
 
             app.UseAuthentication();
             app.UseAuthorization();
